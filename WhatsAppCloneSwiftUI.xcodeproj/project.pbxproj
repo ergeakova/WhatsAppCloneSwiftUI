@@ -14,6 +14,8 @@
 		C07EF3E2288B0F1B006270A7 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3E1288B0F1B006270A7 /* UserView.swift */; };
 		C07EF3E4288B0F44006270A7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3E3288B0F44006270A7 /* AuthService.swift */; };
 		C07EF3E6288B1094006270A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07EF3E5288B1094006270A7 /* GoogleService-Info.plist */; };
+		C0825318288C3CD3007CAE08 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0825317288C3CD3007CAE08 /* UserModel.swift */; };
+		C082531A288C3D84007CAE08 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0825319288C3D84007CAE08 /* UserStore.swift */; };
 		C09A5B2F288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A5B2E288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift */; };
 		C09A5B31288B0BA600341923 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A5B30288B0BA600341923 /* AuthView.swift */; };
 		C09A5B33288B0BA900341923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09A5B32288B0BA900341923 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		C07EF3E1288B0F1B006270A7 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		C07EF3E3288B0F44006270A7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C07EF3E5288B1094006270A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0825317288C3CD3007CAE08 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C0825319288C3D84007CAE08 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		C09A5B2B288B0BA600341923 /* WhatsAppCloneSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppCloneSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09A5B2E288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneSwiftUIApp.swift; sourceTree = "<group>"; };
 		C09A5B30288B0BA600341923 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				C09A5B2E288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift */,
 				C07EF3DB288B0E5D006270A7 /* Utils.swift */,
 				C09A5B30288B0BA600341923 /* AuthView.swift */,
+				C0825317288C3CD3007CAE08 /* UserModel.swift */,
+				C0825319288C3D84007CAE08 /* UserStore.swift */,
 				C07EF3E3288B0F44006270A7 /* AuthService.swift */,
 				C07EF3DD288B0EA2006270A7 /* SignInView.swift */,
 				C07EF3DF288B0EEA006270A7 /* SignUpView.swift */,
@@ -226,9 +232,11 @@
 			files = (
 				C07EF3E0288B0EEA006270A7 /* SignUpView.swift in Sources */,
 				C07EF3E2288B0F1B006270A7 /* UserView.swift in Sources */,
+				C0825318288C3CD3007CAE08 /* UserModel.swift in Sources */,
 				C09A5B31288B0BA600341923 /* AuthView.swift in Sources */,
 				C09A5B2F288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift in Sources */,
 				C07EF3DE288B0EA2006270A7 /* SignInView.swift in Sources */,
+				C082531A288C3D84007CAE08 /* UserStore.swift in Sources */,
 				C07EF3DC288B0E5D006270A7 /* Utils.swift in Sources */,
 				C07EF3E4288B0F44006270A7 /* AuthService.swift in Sources */,
 			);
