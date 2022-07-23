@@ -19,19 +19,36 @@ struct SignInView: View {
     
     var body: some View {
         VStack{
+            Text("Sign In")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
             TextField("Email", text: $userEmail)
                 .font(.title2)
                 .padding(.horizontal)
                 .padding(.vertical, 5.0)
                 .background(.white)
                 .cornerRadius(15)
+                .autocapitalization(.none)
             
-            TextField("Password", text: $userPassword)
+            SecureField("Password", text: $userPassword)
                 .font(.title2)
                 .padding(.horizontal)
                 .padding(.vertical, 5.0)
                 .background(.white)
                 .cornerRadius(15)
+                .autocapitalization(.none)
+            HStack{
+                //TO DO 
+                Spacer()
+                NavigationLink(destination: SignUpView(newUserEmail: "", newUserFirstPassword: "", newUserSecondPassword: "")) {
+                    Text("Forgot your password??")
+                        .foregroundColor(Color("color4"))
+                        .shadow(color: .white, radius: 0.5, x: 0.5, y: 0.5)
+                        .padding(.vertical, 5)
+                }
+            }
+            
             
             Button {
                 
@@ -44,6 +61,7 @@ struct SignInView: View {
                     }
                 }
                 
+                
             } label: {
                 Text("Sign In")
                     .foregroundColor(.white)
@@ -53,30 +71,30 @@ struct SignInView: View {
                     .padding(.horizontal)
                     .padding(.vertical, 5.0)
                     .frame(width: utl.scWidth * 0.5)
-                    .background(Color("Color2"))
+                    .background(Color("color2"))
                     .cornerRadius(15)
-                
-                NavigationLink(" ", isActive: $isAuthenticate) {
-                    UserView()
-                }
             }
             
             
             NavigationLink(destination: SignUpView(newUserEmail: "", newUserFirstPassword: "", newUserSecondPassword: "")) {
                 Text("Sign UP")
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("color1"))
                     .font(.title2)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
                     .padding(.vertical, 5.0)
                     .frame(width: utl.scWidth * 0.5)
-                    .background(Color("Color6"))
+                    .background(Color("color2"))
                     .cornerRadius(15)
             }
-
+            
+            NavigationLink(" ", isActive: $isAuthenticate) {
+                        UserView()
+                }
+            
         }.frame(width: utl.scWidth * 0.9)
-            .background(Color("Color1"))
+            .background(Color("color1"))
             .alert(isPresented: $showError) {
                         return  Alert(
                             title: Text("Error!!!"),

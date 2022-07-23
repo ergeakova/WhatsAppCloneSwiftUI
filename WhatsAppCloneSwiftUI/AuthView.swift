@@ -14,7 +14,7 @@ struct AuthView: View {
             VStack{
                 SignInView(userEmail:"", userPassword: "")
             }.frame(width: utl.scWidth, height: utl.scHeigth)
-                .background(Color("Color1"))
+                .background(Color("color1"))
                 .navigationTitle("Sing In").navigationBarHidden(true)
         }
     }
@@ -22,6 +22,6 @@ struct AuthView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView().background(Color("Color1"))
+        AuthView().background(Color("color1"))
     }
 }

@@ -10,6 +10,7 @@ import Firebase
 
 struct SignUpView: View {
     
+    let db = Firestore.firestore()
     var utl = Utils()
     var userService = AuthService()
     @State private var showError = false
@@ -34,20 +35,23 @@ struct SignUpView: View {
                     .padding(.vertical, 5.0)
                     .background(.white)
                     .cornerRadius(15)
+                    .autocapitalization(.none)
                 
-                TextField("Password", text: $newUserFirstPassword)
+                SecureField("Password", text: $newUserFirstPassword)
                     .font(.title2)
                     .padding(.horizontal)
                     .padding(.vertical, 5.0)
                     .background(.white)
                     .cornerRadius(15)
+                    .autocapitalization(.none)
                 
-                TextField("Password", text: $newUserSecondPassword)
+                SecureField("Password", text: $newUserSecondPassword)
                     .font(.title2)
                     .padding(.horizontal)
                     .padding(.vertical, 5.0)
                     .background(.white)
                     .cornerRadius(15)
+                    .autocapitalization(.none)
                 
                 Button {
                     if(userService.createNewUser(userEmail: newUserEmail, firstPassword: newUserFirstPassword, secondPassword: newUserSecondPassword)){
@@ -56,6 +60,17 @@ struct SignUpView: View {
                                 errorMsg = error?.localizedDescription ?? "Error!!!"
                                 showError = true
                             }else{
+                                if result != nil{
+                                    
+                                    let myUserDic: [String : Any] = ["email": result?.user.email, "userUid": result?.user.uid ]
+                                    
+                                    _ = db.collection("Users").addDocument(data: myUserDic, completion: { error in
+                                        if error != nil{
+                                            errorMsg = error?.localizedDescription ?? "Error!!!"
+                                            showError = true
+                                        }
+                                    })
+                                }
                                 isCreatedUser = true
                             }
                         }
@@ -74,7 +89,7 @@ struct SignUpView: View {
                         .padding(.horizontal)
                         .padding(.vertical, 5.0)
                         .frame(width: utl.scWidth * 0.5)
-                        .background(Color("Color2"))
+                        .background(Color("color3"))
                         .cornerRadius(15)
                     
                         NavigationLink(" ", isActive: $isCreatedUser) {
@@ -82,9 +97,8 @@ struct SignUpView: View {
                         }
                 }
             }.frame(width: utl.scWidth * 0.9)
-                .offset(y: -utl.scWidth * 0.5)
         }.frame(width: utl.scWidth, height: utl.scHeigth)
-            .background(Color("Color1"))
+            .background(Color("color1"))
             .alert(isPresented: $showError) {
                         return  Alert(
                             title: Text("Error!!!"),

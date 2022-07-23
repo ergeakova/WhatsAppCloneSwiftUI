@@ -89,11 +89,11 @@
 			children = (
 				C09A5B2E288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift */,
 				C07EF3DB288B0E5D006270A7 /* Utils.swift */,
-				C07EF3E1288B0F1B006270A7 /* UserView.swift */,
 				C09A5B30288B0BA600341923 /* AuthView.swift */,
 				C07EF3E3288B0F44006270A7 /* AuthService.swift */,
 				C07EF3DD288B0EA2006270A7 /* SignInView.swift */,
 				C07EF3DF288B0EEA006270A7 /* SignUpView.swift */,
+				C07EF3E1288B0F1B006270A7 /* UserView.swift */,
 				C09A5B32288B0BA900341923 /* Assets.xcassets */,
 				C07EF3E5288B1094006270A7 /* GoogleService-Info.plist */,
 				C09A5B34288B0BA900341923 /* Preview Content */,
