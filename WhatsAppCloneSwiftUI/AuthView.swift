@@ -15,8 +15,8 @@ struct AuthView: View {
                 SignInView(userEmail:"", userPassword: "")
             }.frame(width: utl.scWidth, height: utl.scHeigth)
                 .background(Color("color1"))
-                .navigationTitle("Sing In").navigationBarHidden(true)
-        }
+                .navigationTitle("Sing In")
+        }.navigationBarHidden(true)
     }
 }
 

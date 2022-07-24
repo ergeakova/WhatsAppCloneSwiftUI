@@ -91,9 +91,10 @@ struct SignInView: View {
             
             NavigationLink(" ", isActive: $isAuthenticate) {
                         UserView()
-                }
+            }
             
-        }.frame(width: utl.scWidth * 0.9)
+        }.navigationBarHidden(true)
+            .frame(width: utl.scWidth * 0.9)
             .background(Color("color1"))
             .alert(isPresented: $showError) {
                         return  Alert(

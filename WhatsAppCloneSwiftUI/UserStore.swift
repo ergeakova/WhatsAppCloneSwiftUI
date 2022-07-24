@@ -18,6 +18,25 @@ class UserStore: ObservableObject {
     
     init(){
         
+        db.collection("Users").addSnapshotListener { snapshot, error in
+            if error != nil{
+                print(error?.localizedDescription)
+            }else{
+                self.userArray.removeAll(keepingCapacity: false)
+                for document in snapshot!.documents {
+                    if let userUidFirebase = document.get("userUid") as? String {
+                        
+                        if let userMail = document.get("email") as? String{
+                            let user = UserModel(email: userMail, uidFirebase: userUidFirebase)
+                            
+                            self.userArray.append(user)
+                        }
+                    }
+                }
+                self.objectWillChange.send(self.userArray)
+            }
+        }
+        
     }
     
     
