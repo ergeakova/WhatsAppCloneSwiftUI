@@ -10,17 +10,41 @@ import SwiftUI
 struct ChatView: View {
     var utl = Utils()
     var userToChat : UserModel
+    @State var newMsg: String
     var body: some View {
         VStack{
             Text(userToChat.email)
-        }.frame(width: utl.scWidth, height: utl.scHeigth)
-        .background(Color("color1"))
+            Spacer()
+            HStack{
+                TextField("",text: $newMsg)
+                    .font(.title3)
+                    .background(Color("color2"))
+                    .cornerRadius(3)
+                    .padding(.leading)
+                    
+                Text(" > ")
+                    .font(.title)
+                    .background(Color("color4"))
+                    .cornerRadius(15)
+                    .padding(.trailing)
+                    .onAppear(){
+                        sendMessage()
+                    }
+                    
+            }
+        }.navigationBarHidden(true)
+            .background(Color("color1"))
+            
+    }
+
+    func sendMessage(){
         
     }
+        
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(userToChat: UserModel(email: "deneme", uidFirebase: "deneme"))
+        ChatView(userToChat: UserModel(email: "deneme", uidFirebase: "deneme"), newMsg: "")
     }
 }
