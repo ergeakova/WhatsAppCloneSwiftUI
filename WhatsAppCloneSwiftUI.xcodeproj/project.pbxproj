@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0423C54A10D1764CBF9ED509 /* Pods_WhatsAppCloneSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B6FEED29C3F39D65AD938 /* Pods_WhatsAppCloneSwiftUI.framework */; };
+		C0144D15288E10C800ABEF32 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0144D14288E10C700ABEF32 /* ChatService.swift */; };
 		C07EF3DC288B0E5D006270A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DB288B0E5D006270A7 /* Utils.swift */; };
 		C07EF3DE288B0EA2006270A7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DD288B0EA2006270A7 /* SignInView.swift */; };
 		C07EF3E0288B0EEA006270A7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DF288B0EEA006270A7 /* SignUpView.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		298B6FEED29C3F39D65AD938 /* Pods_WhatsAppCloneSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppCloneSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CF2F71551CE89856BB11FE /* Pods-WhatsAppCloneSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppCloneSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppCloneSwiftUI/Pods-WhatsAppCloneSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		C0144D14288E10C700ABEF32 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		C07EF3DB288B0E5D006270A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C07EF3DD288B0EA2006270A7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C07EF3DF288B0EEA006270A7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				C07EF3DB288B0E5D006270A7 /* Utils.swift */,
 				C09A5B30288B0BA600341923 /* AuthView.swift */,
 				C07EF3E3288B0F44006270A7 /* AuthService.swift */,
+				C0144D14288E10C700ABEF32 /* ChatService.swift */,
 				C07EF3DD288B0EA2006270A7 /* SignInView.swift */,
 				C07EF3DF288B0EEA006270A7 /* SignUpView.swift */,
 				C0825317288C3CD3007CAE08 /* UserModel.swift */,
@@ -243,6 +246,7 @@
 				C082531A288C3D84007CAE08 /* UserStore.swift in Sources */,
 				C07EF3DC288B0E5D006270A7 /* Utils.swift in Sources */,
 				C07EF3E4288B0F44006270A7 /* AuthService.swift in Sources */,
+				C0144D15288E10C800ABEF32 /* ChatService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

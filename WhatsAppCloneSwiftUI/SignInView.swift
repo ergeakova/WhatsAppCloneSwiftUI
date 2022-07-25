@@ -23,6 +23,7 @@ struct SignInView: View {
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
+            
             TextField("Email", text: $userEmail)
                 .font(.title2)
                 .padding(.horizontal)

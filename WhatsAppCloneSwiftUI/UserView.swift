@@ -29,11 +29,10 @@ struct UserView: View {
             
             List(userStore.userArray){ user in
                 
-                NavigationLink(destination: ChatView(userToChat: user, newMsg: "")){
+                NavigationLink(destination: ChatView(userToChat: user, sendMsg: "")){
                     Text(user.email)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-
                 }.listRowBackground(Color("color4"))
                 
             }.onAppear(){

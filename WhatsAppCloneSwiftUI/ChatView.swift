@@ -9,14 +9,19 @@ import SwiftUI
 
 struct ChatView: View {
     var utl = Utils()
+    var chatService = ChatService()
     var userToChat : UserModel
-    @State var newMsg: String
+    @State var sendMsg = ""
+    @State private var showError = false
+    @State var errorMsg = ""
+    
     var body: some View {
         VStack{
+            
             Text(userToChat.email)
             Spacer()
             HStack{
-                TextField("",text: $newMsg)
+                TextField("", text: $sendMsg)
                     .font(.title3)
                     .background(Color("color2"))
                     .cornerRadius(3)
@@ -27,24 +32,32 @@ struct ChatView: View {
                     .background(Color("color4"))
                     .cornerRadius(15)
                     .padding(.trailing)
-                    .onAppear(){
-                        sendMessage()
+                    .onTapGesture {
+                        let sendMessageStatus = chatService.sendMessage(receiver: userToChat, message: sendMsg)
+                        if(utl.isEmptyString(value: sendMessageStatus )){
+                            sendMsg = ""
+                        }else{
+                            errorMsg = sendMessageStatus
+                            showError = true
+                        }
                     }
                     
             }
-        }.navigationBarHidden(true)
+        }
             .background(Color("color1"))
+            .alert(isPresented: $showError) {
+                        return  Alert(
+                            title: Text("Error!!!"),
+                            message: Text(errorMsg))
+            }
             
     }
 
-    func sendMessage(){
-        
-    }
         
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(userToChat: UserModel(email: "deneme", uidFirebase: "deneme"), newMsg: "")
+        ChatView(userToChat: UserModel(email: "deneme", uidFirebase: "deneme"), sendMsg: "")
     }
 }
