@@ -14,12 +14,17 @@ struct ChatView: View {
     @State var sendMsg = ""
     @State private var showError = false
     @State var errorMsg = ""
-    
+    @EnvironmentObject var chatStore : ChatStore
+
     var body: some View {
         VStack{
             
             Text(userToChat.email)
-            Spacer()
+            
+            List(chatStore.chatArray){ chat in
+                Text(chat.message)
+            }
+            
             HStack{
                 TextField("", text: $sendMsg)
                     .font(.title3)

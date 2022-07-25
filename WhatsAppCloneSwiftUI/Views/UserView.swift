@@ -29,7 +29,7 @@ struct UserView: View {
             
             List(userStore.userArray){ user in
                 
-                NavigationLink(destination: ChatView(userToChat: user, sendMsg: "")){
+                NavigationLink(destination: ChatView(userToChat: user).environmentObject(ChatStore(receiver: user.uidFirebase))){
                     Text(user.email)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
