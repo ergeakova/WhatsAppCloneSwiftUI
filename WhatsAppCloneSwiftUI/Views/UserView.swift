@@ -30,7 +30,7 @@ struct UserView: View {
             List(userStore.userArray){ user in
                 
                 NavigationLink(destination: ChatView(userToChat: user).environmentObject(ChatStore(receiver: user.uidFirebase))){
-                    Text(user.email)
+                    Text(user.email.split(separator: "@")[0])
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }.listRowBackground(Color("color4"))

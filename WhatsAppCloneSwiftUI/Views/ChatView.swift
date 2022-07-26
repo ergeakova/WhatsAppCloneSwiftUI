@@ -19,36 +19,50 @@ struct ChatView: View {
     var body: some View {
         VStack{
             
-            Text(userToChat.email)
-            
-            List(chatStore.chatArray){ chat in
-                Text(chat.message)
-            }
+            ScrollView{
+                
+                ForEach(chatStore.chatArray){ chat in
+                ChatRowView(chat: chat)
+                        .padding(2)
+                }
+                
+            }.padding(.horizontal)
             
             HStack{
+                ZStack{
                 TextField("", text: $sendMsg)
+                    .padding(7)
                     .font(.title3)
                     .background(Color("color2"))
                     .cornerRadius(3)
-                    .padding(.leading)
-                    
-                Text(" > ")
-                    .font(.title)
-                    .background(Color("color4"))
-                    .cornerRadius(15)
-                    .padding(.trailing)
-                    .onTapGesture {
-                        let sendMessageStatus = chatService.sendMessage(receiver: userToChat, message: sendMsg)
-                        if(utl.isEmptyString(value: sendMessageStatus )){
-                            sendMsg = ""
-                        }else{
-                            errorMsg = sendMessageStatus
-                            showError = true
-                        }
+                
+                    HStack{
+                        Spacer()
+                        Text(" > ")
+                            .font(.title)
+                            .background(Color("color4"))
+                            .cornerRadius(15)
+                            .onTapGesture {
+                                if(utl.isEmptyString(value: sendMsg)){
+                                    let sendMessageStatus = chatService.sendMessage(receiver: userToChat, message: sendMsg)
+                                    if(utl.isEmptyString(value: sendMessageStatus )){
+                                        sendMsg = ""
+                                    }else{
+                                        errorMsg = sendMessageStatus
+                                        showError = true
+                                    }
+                                }
+                            }
                     }
+               
+                }
                     
             }
-        }
+        }.onAppear(){
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("color3"))]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("color3"))]
+            UINavigationBar.appearance().barTintColor = UIColor(Color("color1"))
+        } .navigationTitle(userToChat.email.split(separator: "@")[0])
             .background(Color("color1"))
             .alert(isPresented: $showError) {
                         return  Alert(

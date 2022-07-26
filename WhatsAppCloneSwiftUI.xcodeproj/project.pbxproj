@@ -11,6 +11,7 @@
 		C0144D15288E10C800ABEF32 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0144D14288E10C700ABEF32 /* ChatService.swift */; };
 		C0144D1A288F1A7E00ABEF32 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0144D19288F1A7E00ABEF32 /* ChatModel.swift */; };
 		C0144D1C288F1BAF00ABEF32 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0144D1B288F1BAF00ABEF32 /* ChatStore.swift */; };
+		C0144D20288F521A00ABEF32 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0144D1F288F521A00ABEF32 /* ChatRowView.swift */; };
 		C07EF3DC288B0E5D006270A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DB288B0E5D006270A7 /* Utils.swift */; };
 		C07EF3DE288B0EA2006270A7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DD288B0EA2006270A7 /* SignInView.swift */; };
 		C07EF3E0288B0EEA006270A7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EF3DF288B0EEA006270A7 /* SignUpView.swift */; };
@@ -32,6 +33,7 @@
 		C0144D14288E10C700ABEF32 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		C0144D19288F1A7E00ABEF32 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		C0144D1B288F1BAF00ABEF32 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		C0144D1F288F521A00ABEF32 /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
 		C07EF3DB288B0E5D006270A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C07EF3DD288B0EA2006270A7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C07EF3DF288B0EEA006270A7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C07EF3DF288B0EEA006270A7 /* SignUpView.swift */,
 				C07EF3E1288B0F1B006270A7 /* UserView.swift */,
 				C082531B288CD406007CAE08 /* ChatView.swift */,
+				C0144D1F288F521A00ABEF32 /* ChatRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				C09A5B31288B0BA600341923 /* AuthView.swift in Sources */,
 				C0144D1C288F1BAF00ABEF32 /* ChatStore.swift in Sources */,
 				C09A5B2F288B0BA600341923 /* WhatsAppCloneSwiftUIApp.swift in Sources */,
+				C0144D20288F521A00ABEF32 /* ChatRowView.swift in Sources */,
 				C07EF3DE288B0EA2006270A7 /* SignInView.swift in Sources */,
 				C082531A288C3D84007CAE08 /* UserStore.swift in Sources */,
 				C07EF3DC288B0E5D006270A7 /* Utils.swift in Sources */,
