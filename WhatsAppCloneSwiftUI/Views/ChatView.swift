@@ -29,35 +29,36 @@ struct ChatView: View {
             }.padding(.horizontal)
             
             HStack{
-                ZStack{
+              
                 TextField("", text: $sendMsg)
-                    .padding(7)
+                    .padding(.vertical,7)
                     .font(.title3)
                     .background(Color("color2"))
                     .cornerRadius(3)
-                
-                    HStack{
-                        Spacer()
-                        Text(" > ")
-                            .font(.title)
-                            .background(Color("color4"))
-                            .cornerRadius(15)
-                            .onTapGesture {
-                                if(utl.isEmptyString(value: sendMsg)){
-                                    let sendMessageStatus = chatService.sendMessage(receiver: userToChat, message: sendMsg)
-                                    if(utl.isEmptyString(value: sendMessageStatus )){
-                                        sendMsg = ""
-                                    }else{
-                                        errorMsg = sendMessageStatus
-                                        showError = true
-                                    }
+                    .frame(height: utl.scHeigth * 0.08)
+              
+                        Button {
+                            if(utl.isEmptyString(value: sendMsg)){
+                                let sendMessageStatus = chatService.sendMessage(receiver: userToChat, message: sendMsg)
+                                if(utl.isEmptyString(value: sendMessageStatus )){
+                                    sendMsg = ""
+                                }else{
+                                    errorMsg = sendMessageStatus
+                                    showError = true
                                 }
                             }
-                    }
-               
-                }
+                        } label: {
+                            Image("sendIcon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxHeight: .infinity)
+                                
+                        }.padding(.vertical)
+                    .padding(.trailing, 6)
                     
-            }
+            }.frame(height: utl.scHeigth * 0.08)
+                    
+            
         }.onAppear(){
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("color3"))]
             UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("color3"))]
