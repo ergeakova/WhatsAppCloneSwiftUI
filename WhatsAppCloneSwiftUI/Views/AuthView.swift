@@ -17,6 +17,7 @@ struct AuthView: View {
                 .background(Color("color1"))
                 .navigationTitle("Sing In")
         }.navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
